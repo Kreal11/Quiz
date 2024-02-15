@@ -7,7 +7,7 @@ const Quiz = () => {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    const getQuestions = async () => {
+    const fetchQuestions = async () => {
       try {
         const response = await getAllQuestions();
         setQuestions(response);
@@ -17,7 +17,7 @@ const Quiz = () => {
         console.log(err);
       }
     };
-    getQuestions();
+    fetchQuestions();
   }, []);
 
   return (
