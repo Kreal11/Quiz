@@ -6,13 +6,27 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
-  const [nextQuestionId, setNextQuestionId] = useState(1);
+  const [quizData, setQuizData] = useState([]);
   const navigate = useNavigate();
+
+  const getDefaultNextQuestionId = () => {
+    const storedNextQuestionId = localStorage.getItem("nextQuestionId");
+    return storedNextQuestionId ? parseInt(storedNextQuestionId, 10) : 1;
+  };
+
+  const [nextQuestionId, setNextQuestionId] = useState(
+    getDefaultNextQuestionId
+  );
+
+  useEffect(() => {
+    localStorage.setItem("nextQuestionId", nextQuestionId);
+  }, [nextQuestionId]);
 
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
         if (nextQuestionId > 5) {
+          localStorage.removeItem("nextQuestionId");
           navigate("/loader");
         } else {
           const response = await getQuestionById(nextQuestionId);
