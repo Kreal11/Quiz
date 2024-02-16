@@ -1,6 +1,12 @@
 import Answer from "../answer/Answer";
 
-const Question = ({ title, answers, setNextQuestionId, type }) => {
+const Question = ({
+  title,
+  answers,
+  setNextQuestionId,
+  type,
+  handleAnswerSelection,
+}) => {
   return (
     <li>
       <h3>{title}</h3>
@@ -8,6 +14,7 @@ const Question = ({ title, answers, setNextQuestionId, type }) => {
         {answers &&
           answers?.map((answer) => (
             <Answer
+              handleAnswerSelection={handleAnswerSelection}
               type={type}
               setNextQuestionId={setNextQuestionId}
               {...answer}

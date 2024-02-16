@@ -6,7 +6,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
-  const [quizData, setQuizData] = useState([]);
+  const [quizResults, setQuizResults] = useState([]);
+  console.log(quizResults);
   const navigate = useNavigate();
 
   const getDefaultNextQuestionId = () => {
@@ -26,6 +27,7 @@ const Quiz = () => {
     const fetchQuestions = async () => {
       try {
         if (nextQuestionId > 5) {
+          localStorage.setItem("quizData", JSON.stringify(quizResults));
           localStorage.removeItem("nextQuestionId");
           navigate("/loader");
         } else {
@@ -39,10 +41,18 @@ const Quiz = () => {
       }
     };
     fetchQuestions();
-  }, [nextQuestionId, navigate]);
+  }, [nextQuestionId, navigate, quizResults]);
 
   const handleGoBack = () => {
     setNextQuestionId((prev) => prev - 1);
+  };
+
+  const handleAnswerSelection = (answer) => {
+    setQuizResults([
+      ...quizResults,
+      { question: question.title, type: question.type, answer },
+    ]);
+    setNextQuestionId((prev) => prev + 1);
   };
 
   return (
@@ -50,6 +60,7 @@ const Quiz = () => {
       <NavLink onClick={handleGoBack}>Back</NavLink>
       {question && (
         <Question
+          handleAnswerSelection={handleAnswerSelection}
           setNextQuestionId={setNextQuestionId}
           {...question}
           key={question.id}

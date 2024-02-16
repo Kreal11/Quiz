@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-const Answer = ({ text, setNextQuestionId, type }) => {
+const Answer = ({ text, setNextQuestionId, handleAnswerSelection }) => {
   const handleNextQuestion = () => {
-    setNextQuestionId((prev) => prev + 1);
+    handleAnswerSelection(text);
   };
 
   return (
