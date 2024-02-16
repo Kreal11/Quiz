@@ -8,4 +8,5 @@ export const ProgressBarDiv = styled.div`
   width: calc(${(props) => props.$progress}% - 20%);
   height: 5px;
   background-color: pink;
+  transition: width 1s ease-in-out;
 `;
