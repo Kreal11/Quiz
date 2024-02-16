@@ -1,31 +1,37 @@
 import { useEffect, useState } from "react";
-import { getAllQuestions } from "../../api/apiQuiz";
+import { getQuestionById } from "../../api/apiQuiz";
 import { toast } from "react-toastify";
 import Question from "../../components/question/Question";
+import { useNavigate } from "react-router-dom";
 
 const Quiz = () => {
-  const [questions, setQuestions] = useState([]);
+  const [question, setQuestion] = useState(null);
+  const [nextQuestionId, setNextQuestionId] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await getAllQuestions();
-        setQuestions(response);
-        console.log(response);
+        const response = await getQuestionById(nextQuestionId);
+        setQuestion(response[0]);
+        navigate(`/questions/${nextQuestionId}`);
       } catch (err) {
         toast.error("Oops, something went wrong! Try later!");
         console.log(err);
       }
     };
     fetchQuestions();
-  }, []);
+  }, [nextQuestionId, navigate]);
 
   return (
     <ul>
-      {questions &&
-        questions?.map((question) => (
-          <Question {...question} key={question.id} />
-        ))}
+      {question && (
+        <Question
+          setNextQuestionId={setNextQuestionId}
+          {...question}
+          key={question.id}
+        />
+      )}
     </ul>
   );
 };

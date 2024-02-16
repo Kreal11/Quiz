@@ -5,9 +5,13 @@ export const quizInstance = axios.create({
   baseURL: "https://65ce7da5c715428e8b40d999.mockapi.io/api/quiz/",
 });
 
-export const getAllQuestions = async () => {
+export const getQuestionById = async (id) => {
   try {
-    const response = await quizInstance.get("questions/");
+    const response = await quizInstance.get("questions/", {
+      params: {
+        id,
+      },
+    });
     console.log(response);
     return response.data;
   } catch (err) {
