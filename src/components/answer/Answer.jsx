@@ -1,6 +1,6 @@
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Answer = ({ text, setNextQuestionId }) => {
+const Answer = ({ text, setNextQuestionId, type }) => {
   const handleNextQuestion = () => {
     setNextQuestionId((prev) => prev + 1);
   };

@@ -1,6 +1,6 @@
 import Answer from "../answer/Answer";
 
-const Question = ({ title, answers, setNextQuestionId }) => {
+const Question = ({ title, answers, setNextQuestionId, type }) => {
   return (
     <li>
       <h3>{title}</h3>
@@ -8,6 +8,7 @@ const Question = ({ title, answers, setNextQuestionId }) => {
         {answers &&
           answers?.map((answer) => (
             <Answer
+              type={type}
               setNextQuestionId={setNextQuestionId}
               {...answer}
               key={answer.id}
