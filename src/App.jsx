@@ -9,7 +9,6 @@ import Loader from "./components/loader/Loader";
 
 function App() {
   return (
-
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Quiz />} />
@@ -20,7 +19,6 @@ function App() {
       <Route path="thanks" element={<Thanks />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
-
   );
 }
 
