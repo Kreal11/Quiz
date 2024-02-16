@@ -1,8 +1,6 @@
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 
 const Answer = ({ text, setNextQuestionId }) => {
-  const { id } = useParams();
-
   const handleNextQuestion = () => {
     setNextQuestionId((prev) => prev + 1);
   };

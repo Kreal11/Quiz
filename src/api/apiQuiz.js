@@ -12,7 +12,6 @@ export const getQuestionById = async (id) => {
         id,
       },
     });
-    console.log(response);
     return response.data;
   } catch (err) {
     toast.error(`Oops, something went wrong! Try later! Error: ${err.message}`);

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getQuestionById } from "../../api/apiQuiz";
 import { toast } from "react-toastify";
 import Question from "../../components/question/Question";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
@@ -12,9 +12,13 @@ const Quiz = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await getQuestionById(nextQuestionId);
-        setQuestion(response[0]);
-        navigate(`/questions/${nextQuestionId}`);
+        if (nextQuestionId > 5) {
+          navigate("/loader");
+        } else {
+          const response = await getQuestionById(nextQuestionId);
+          setQuestion(response[0]);
+          navigate(`/questions/${nextQuestionId}`);
+        }
       } catch (err) {
         toast.error("Oops, something went wrong! Try later!");
         console.log(err);
@@ -23,8 +27,13 @@ const Quiz = () => {
     fetchQuestions();
   }, [nextQuestionId, navigate]);
 
+  const handleGoBack = () => {
+    setNextQuestionId((prev) => prev - 1);
+  };
+
   return (
     <ul>
+      <NavLink onClick={handleGoBack}>Back</NavLink>
       {question && (
         <Question
           setNextQuestionId={setNextQuestionId}

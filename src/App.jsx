@@ -5,6 +5,7 @@ import Quiz from "./pages/quiz/Quiz";
 import Email from "./pages/email/Email";
 import Thanks from "./pages/thanks/Thanks";
 import NotFound from "./pages/notFound/NotFound";
+import Loader from "./components/loader/Loader";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="questions/:id" element={<Quiz />} />
+        <Route path="loader" element={<Loader />} />
         <Route path="email" element={<Email />} />
         <Route path="thanks" element={<Thanks />} />
       </Route>
