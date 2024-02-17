@@ -14,12 +14,23 @@ const Thanks = () => {
       if (Object.hasOwnProperty.call(quizResults, key)) {
         const item = quizResults[key];
         let answerValue;
-        if (Array.isArray(item)) {
-          answerValue = `"${item.join(",")}";`;
+        let type;
+
+        // Проверяем, если ключ "email", то записываем его значение как строку
+        if (key === "email") {
+          answerValue = `"${item}"`; // Оборачиваем значение email в кавычки
+          type = "email";
         } else {
-          answerValue = `"${item}";`;
+          answerValue = item.answer;
+          type = item.type;
+          if (Array.isArray(answerValue)) {
+            answerValue = `"${answerValue.join(",")}"`;
+          } else {
+            answerValue = `"${answerValue}"`;
+          }
         }
-        csvContent += `${order},${key},${item.type},${answerValue}\n`;
+
+        csvContent += `${order},${key},${type},${answerValue}\n`;
         order++;
       }
     }
