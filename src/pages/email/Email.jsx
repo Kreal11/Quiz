@@ -14,7 +14,7 @@ const Email = () => {
     e.preventDefault();
 
     const quizResults = JSON.parse(localStorage.getItem("quizData")) || [];
-    const newData = { ...quizResults, 5: { email } };
+    const newData = { ...quizResults, email };
     localStorage.setItem("quizData", JSON.stringify(newData));
 
     setRedirecting(true);
