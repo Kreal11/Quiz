@@ -20,10 +20,10 @@ export const OuterCircle = styled.div`
   height: 252px;
   margin: 0 auto;
   border-radius: 50%;
-  background-color: pink;
+  background-color: #e4229c;
 
   background: conic-gradient(
-    pink ${(props) => props.$progress}%,
+    #e4229c ${(props) => props.$progress}%,
     transparent 0
   );
 
