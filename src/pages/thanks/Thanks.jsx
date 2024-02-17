@@ -7,17 +7,22 @@ const Thanks = () => {
 
   const handleDownloadAnswers = () => {
     const quizResults = JSON.parse(localStorage.getItem("quizData")) || {};
-    let csvContent =
-      "Order|                                 Title                                    |                   Type                 |   Answer    |\n";
-    Object.keys(quizResults).forEach((key, index) => {
-      const item = quizResults[key];
-      if (key === "email") {
-        csvContent += `6        |    Email    |    email    |${item}    |\n`;
-      } else {
-        const order = index + 1;
-        csvContent += `${order}        |${item.question}            |${item.type}          |${item.answer}    |\n`;
+    let csvContent = "order,title,type,answer\n";
+
+    let order = 1;
+    for (const key in quizResults) {
+      if (Object.hasOwnProperty.call(quizResults, key)) {
+        const item = quizResults[key];
+        let answerValue;
+        if (Array.isArray(item)) {
+          answerValue = `"${item.join(",")}";`;
+        } else {
+          answerValue = `"${item}";`;
+        }
+        csvContent += `${order},${key},${item.type},${answerValue}\n`;
+        order++;
       }
-    });
+    }
 
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");

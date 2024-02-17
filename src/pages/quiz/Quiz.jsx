@@ -48,10 +48,14 @@ const Quiz = () => {
   };
 
   const handleAnswerSelection = (answer) => {
-    setQuizResults([
-      ...quizResults,
-      { question: question.title, type: question.type, answer },
-    ]);
+    const updatedResults = { ...quizResults };
+
+    updatedResults[question.title] = {
+      answer: answer,
+      type: question.type,
+    };
+
+    setQuizResults(updatedResults);
     setNextQuestionId((prev) => prev + 1);
   };
 

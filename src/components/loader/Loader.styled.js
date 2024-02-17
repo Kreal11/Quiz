@@ -26,19 +26,4 @@ export const OuterCircle = styled.div`
     #e4229c ${(props) => props.$progress}%,
     transparent 0
   );
-
-  /* &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 5px pink; 
-    transform: rotate(
-      ${(props) => props.$progress * 3.6}deg
-    ); 
-    box-sizing: border-box;
-  } */
 `;

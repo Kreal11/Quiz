@@ -1,32 +1,38 @@
-import { NavLink } from "react-router-dom";
-
-const Answer = ({ text, handleAnswerSelection, type }) => {
-  const handleNextQuestion = () => {
-    handleAnswerSelection(text);
-  };
-
-  const handleMultipleSelect = () => {
-    // Мы не можем выбирать больше 3 ответов для типа 'bubble'
-    if (type === "bubble" && handleAnswerSelection.length >= 3) {
-      return;
+const Answer = ({
+  text,
+  handleAnswerSelection,
+  type,
+  setSelectedAnswers,
+  selectedAnswers,
+}) => {
+  const handleChange = () => {
+    if (type === "multiple-select" || type === "bubble") {
+      // Создаем копию текущих выбранных ответов
+      const updatedAnswers = [...selectedAnswers];
+      const index = updatedAnswers.indexOf(text);
+      if (index === -1) {
+        updatedAnswers.push(text); // Добавляем ответ в массив, если его там нет
+      } else {
+        updatedAnswers.splice(index, 1); // Удаляем ответ из массива, если он уже выбран
+      }
+      // Обновляем выбранные ответы
+      setSelectedAnswers(updatedAnswers);
+    } else {
+      handleAnswerSelection(text); // Обрабатываем ответ как обычно для других типов вопросов
     }
-    handleAnswerSelection(text);
   };
 
   return (
     <div>
-      {(type === "single-select" || type === "single-select-image") && (
-        <NavLink onClick={handleNextQuestion}>{text}</NavLink>
-      )}
-      {type === "multiple-select" && (
-        <label htmlFor={text}>
-          <input type="checkbox" id={text} />
-          {text}
-        </label>
-      )}
-      {type === "bubble" && (
-        <label htmlFor={text}>
-          <input type="checkbox" id={text} />
+      {type === "single-select" || type === "single-select-image" ? (
+        <p onClick={handleChange}>{text}</p>
+      ) : (
+        <label>
+          <input
+            type="checkbox"
+            onChange={handleChange}
+            checked={selectedAnswers.includes(text)}
+          />
           {text}
         </label>
       )}
