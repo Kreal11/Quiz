@@ -1,0 +1,56 @@
+{
+  "answer": "answer",
+  "type": "type",
+  "email": "email",
+  "Email": "Email",
+
+  "What is your preferred language?": "What is your preferred language?",
+  "What gender do you identify with?": "What gender do you identify with?",
+  "What is your age?": "What is your age?",
+  "What do you hate the most in a book?": "What do you hate the most in a book?",
+  "What are your favorite topics?": "What are your favorite topics?",
+
+  "single-select": "single-select",
+  "single-select-image": "single-select-image",
+  "multiple-select": "multiple-select",
+  "bubble": "bubble",
+
+  "English": "English",
+  "German": "German",
+  "French": "French",
+  "Spanish": "Spanish",
+
+  "Male": "Male",
+  "Female": "Female",
+  "Other": "Other",
+
+  "18-29": "18-29",
+  "30-39": "30-39",
+  "40-49": "40-49",
+  "50+": "50+",
+
+  "Lack of logic": "Lack of logic",
+  "A slow speed": "A slow speed",
+  "Lack of humor": "Lack of humor",
+  "Way too generic ending": "Way too generic ending",
+
+  "Werewolf": "Werewolf",
+  "Action": "Action",
+  "Royal Obsession": "Royal Obsession",
+  "Bad Boy": "Bad Boy",
+  "Billionaire": "Billionaire",
+  "Young Adult": "Young Adult",
+  "Romance": "Romance",
+
+  "Enter your email to get full access": "Enter your email to get full access",
+  "By continuing I agree with Privacy policy and Terms of use": "By continuing I agree with Privacy policy and Terms of use",
+  "Your email": "Your email",
+
+  "Preparing results for you": "Preparing results for you",
+
+  "Thanks": "Thanks",
+  "Download my answers": "Download my answers",
+  "Retake my quiz": "Retake my quiz",
+
+  "Next": "Next"
+}
