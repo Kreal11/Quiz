@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const Answer = ({
   text,
   handleAnswerSelection,
@@ -5,27 +7,29 @@ const Answer = ({
   setSelectedAnswers,
   selectedAnswers,
 }) => {
+  const { t, i18n } = useTranslation();
+
   const handleChange = () => {
     if (type === "multiple-select" || type === "bubble") {
-      // Создаем копию текущих выбранных ответов
       const updatedAnswers = [...selectedAnswers];
       const index = updatedAnswers.indexOf(text);
       if (index === -1) {
-        updatedAnswers.push(text); // Добавляем ответ в массив, если его там нет
+        updatedAnswers.push(text);
       } else {
-        updatedAnswers.splice(index, 1); // Удаляем ответ из массива, если он уже выбран
+        updatedAnswers.splice(index, 1);
       }
-      // Обновляем выбранные ответы
       setSelectedAnswers(updatedAnswers);
     } else {
-      handleAnswerSelection(text); // Обрабатываем ответ как обычно для других типов вопросов
+      handleAnswerSelection(text);
     }
   };
 
   return (
     <div>
       {type === "single-select" || type === "single-select-image" ? (
-        <p onClick={handleChange}>{text}</p>
+        <>
+          <p onClick={handleChange}>{t(text)}</p>
+        </>
       ) : (
         <label>
           <input
@@ -33,7 +37,7 @@ const Answer = ({
             onChange={handleChange}
             checked={selectedAnswers.includes(text)}
           />
-          {text}
+          {t(text)}
         </label>
       )}
     </div>

@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const Email = () => {
   const [email, setEmail] = useState("");
   const [redirecting, setRedirecting] = useState(false);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,21 +29,21 @@ const Email = () => {
   };
   return (
     <div>
-      <h3>Email</h3>
-      <p>Enter your email to get full access</p>
+      <h3>{t("Email")}</h3>
+      <p>{t("Enter your email to get full access")}</p>
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Your email"
+          placeholder={t("Your email")}
           value={email}
           onChange={handleEmailChange}
           disabled={redirecting}
         />
         <button type="submit" disabled={redirecting}>
-          Next
+          {t("Next")}
         </button>
       </form>
-      <p>By continuing I agree with Privacy policy and Terms of use</p>
+      <p>{t("By continuing I agree with Privacy policy and Terms of use")}</p>
     </div>
   );
 };

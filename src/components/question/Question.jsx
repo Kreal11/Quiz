@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Answer from "../answer/Answer";
+import { useTranslation } from "react-i18next";
 
 const Question = ({
   title,
@@ -9,7 +10,7 @@ const Question = ({
   handleAnswerSelection,
 }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
-
+  const { t } = useTranslation();
   const handleNextQuestion = () => {
     if (type === "multiple-select" || type === "bubble") {
       handleAnswerSelection(selectedAnswers);
@@ -17,13 +18,15 @@ const Question = ({
     }
   };
 
+  console.log(title);
+
   const hasSelectedAnswers = selectedAnswers.length > 0;
 
   const isBubbleMaxSelected = type === "bubble" && selectedAnswers.length > 3;
 
   return (
     <li>
-      <h3>{title}</h3>
+      <h3>{t(title)}</h3>
       {type === "bubble" && <p>Select up to 3 answers</p>}
       <ul>
         {answers &&
@@ -44,7 +47,7 @@ const Question = ({
           onClick={handleNextQuestion}
           disabled={!hasSelectedAnswers || isBubbleMaxSelected}
         >
-          Next
+          {t("Next")}
         </button>
       )}
     </li>

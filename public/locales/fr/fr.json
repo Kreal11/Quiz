@@ -1,0 +1,51 @@
+{
+  "answer": "Réponse",
+  "type": "Type",
+  "email": "E-mail",
+  "Email": "E-mail",
+
+  "What is your preferred language?": "Quelle est votre langue préférée?",
+  "What gender do you identify with?": "Avec quel genre vous identifiez-vous?",
+  "What is your age?": "Quel âge avez-vous?",
+  "What do you hate the most in a book?": "Qu'est-ce que vous détestez le plus dans un livre?",
+  "What are your favorite topics?": "Quels sont vos sujets préférés?",
+
+  "English": "Anglais",
+  "German": "Allemand",
+  "French": "Français",
+  "Spanish": "Espagnol",
+
+  "Male": "Masculin",
+  "Female": "Féminin",
+  "Other": "Autre",
+
+  "18-29": "18-29",
+  "30-39": "30-39",
+  "40-49": "40-49",
+  "50+": "50+",
+
+  "Lack of logic": "Manque de logique",
+  "A slow speed": "Une vitesse lente",
+  "Lack of humor": "Manque d'humour",
+  "Way too generic ending": "Trop générique",
+
+  "Werewolf": "Loup-garou",
+  "Action": "Action",
+  "Royal Obsession": "Obsession royale",
+  "Bad Boy": "Mauvais garçon",
+  "Billionaire": "Milliardaire",
+  "Young Adult": "Jeune adulte",
+  "Romance": "Romance",
+
+  "Enter your email to get full access": "Entrez votre email pour obtenir un accès complet",
+  "By continuing I agree with Privacy policy and Terms of use": "En continuant, j'accepte la politique de confidentialité et les conditions d'utilisation",
+  "Your email": "Votre e-mail",
+
+  "Preparing results for you": "Préparation des résultats pour vous",
+
+  "Thanks": "Merci",
+  "Download my answers": "Télécharger mes réponses",
+  "Retake my quiz": "Refaire mon quiz",
+
+  "Next": "Suivant"
+}

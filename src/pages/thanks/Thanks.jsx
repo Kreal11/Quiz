@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
 const Thanks = () => {
+  const { t } = useTranslation();
+
   const handleRetakeQuiz = () => {
     localStorage.removeItem("quizData");
   };
@@ -16,9 +19,8 @@ const Thanks = () => {
         let answerValue;
         let type;
 
-        // Проверяем, если ключ "email", то записываем его значение как строку
         if (key === "email") {
-          answerValue = `"${item}"`; // Оборачиваем значение email в кавычки
+          answerValue = `"${item}"`;
           type = "email";
         } else {
           answerValue = item.answer;
@@ -46,10 +48,12 @@ const Thanks = () => {
 
   return (
     <div>
-      <h3>Thanks</h3>
-      <button onClick={handleDownloadAnswers}>Download my answers</button>
+      <h3>{t("Thanks")}</h3>
+      <button onClick={handleDownloadAnswers}>
+        {t("Download my answers")}
+      </button>
       <NavLink to="/questions/1" onClick={handleRetakeQuiz}>
-        Retake my quiz
+        {t("Retake my quiz")}
       </NavLink>
     </div>
   );
