@@ -9,7 +9,10 @@ import {
   LanguageNavLink,
   LanguageQuestionWrapper,
   QuestionHeader,
+  QuizWrapper,
+  SvgBackArrow,
 } from "./Quiz.styled";
+import sprite from "../../assets/sprite.svg";
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
@@ -80,7 +83,7 @@ const Quiz = () => {
   };
 
   return (
-    <>
+    <QuizWrapper>
       {nextQuestionId === 1 && (
         <LanguageQuestionWrapper>
           <QuestionHeader>
@@ -106,7 +109,11 @@ const Quiz = () => {
 
       {nextQuestionId > 1 && (
         <>
-          <NavLink onClick={handleGoBack}>Back</NavLink>
+          <NavLink onClick={handleGoBack}>
+            <SvgBackArrow>
+              <use xlinkHref={`${sprite}#icon-back`}></use>
+            </SvgBackArrow>
+          </NavLink>
           <ul>
             {question && (
               <Question
@@ -119,7 +126,7 @@ const Quiz = () => {
           </ul>
         </>
       )}
-    </>
+    </QuizWrapper>
   );
 };
 

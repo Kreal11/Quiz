@@ -47,3 +47,15 @@ export const LanguageNavLink = styled(NavLink)`
   padding: 18px 20px;
   text-decoration: none;
 `;
+
+export const QuizWrapper = styled.div`
+  position: relative;
+`;
+
+export const SvgBackArrow = styled.svg`
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: -80px;
+  left: 0;
+`;
