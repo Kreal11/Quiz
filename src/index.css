@@ -1,7 +1,16 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", system-ui, "Albert Sans", "Niconne", Arial,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --main-bg-color: #1f002b;
+  --answer-bg-color: #36173d;
+  --answer-color: #ffffff;
+  --invalid-color: #d0006e;
+  --question-color: #f2f3f5;
+  --accent-color: #e4229b;
+  --disabled-color: #e4229c;
+  --support-color: #c4c8cc;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -17,7 +26,6 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }

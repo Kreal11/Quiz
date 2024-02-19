@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ProgressBarDiv } from "./Header.styled";
+import { HeaderWrapper, ProgressBarDiv } from "./Header.styled";
 
 const Header = () => {
   const { id } = useParams();
@@ -7,10 +7,12 @@ const Header = () => {
   const progress = (parseInt(id) / 5) * 100 + 10;
 
   return (
-    <div>
-      <p>{id}/5</p>
+    <HeaderWrapper>
+      <p>
+        <span>{id}</span> / 5
+      </p>
       <ProgressBarDiv $progress={progress} />
-    </div>
+    </HeaderWrapper>
   );
 };
 

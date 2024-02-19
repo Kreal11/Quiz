@@ -6,13 +6,14 @@ import { NavLink } from "react-router-dom";
 const Question = ({
   id,
   title,
+  support_text,
   answers,
   setNextQuestionId,
   type,
   handleAnswerSelection,
 }) => {
   const [selectedAnswers, setSelectedAnswers] = useState([]);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const handleNextQuestion = () => {
     if (type === "multiple-select" || type === "bubble") {
       handleAnswerSelection(selectedAnswers);
@@ -33,7 +34,7 @@ const Question = ({
       {id > 1 && (
         <>
           <h3>{t(title)}</h3>
-          {type === "bubble" && <p>Select up to 3 answers</p>}
+          {support_text && <h4>{support_text}</h4>}
           <ul>
             {answers &&
               answers?.map((answer) => (
