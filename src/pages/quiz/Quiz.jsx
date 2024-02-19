@@ -4,6 +4,12 @@ import { toast } from "react-toastify";
 import Question from "../../components/question/Question";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {
+  LanguageLiNavLinkWrapper,
+  LanguageNavLink,
+  LanguageQuestionWrapper,
+  QuestionHeader,
+} from "./Quiz.styled";
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
@@ -61,16 +67,14 @@ const Quiz = () => {
     setNextQuestionId((prev) => prev + 1);
   };
 
-  const changeLanguage = (lng, language) => {
+  const changeLanguage = (lng, languageName) => {
     i18n.changeLanguage(lng);
-    // setTimeout(() => {
     const updatedResults = { ...quizResults };
     updatedResults["What is your preferred language?"] = {
-      answer: language,
+      answer: languageName,
       type: "single-select",
     };
     setQuizResults(updatedResults);
-    // }, 2000);
 
     setNextQuestionId((prev) => prev + 1);
   };
@@ -78,21 +82,26 @@ const Quiz = () => {
   return (
     <>
       {nextQuestionId === 1 && (
-        <div>
-          <h3>{t("What is your preferred language?")}</h3>
-          <NavLink onClick={() => changeLanguage("en", "English")}>
-            {t("English")}
-          </NavLink>
-          <NavLink onClick={() => changeLanguage("de", "German")}>
-            {t("German")}
-          </NavLink>
-          <NavLink onClick={() => changeLanguage("fr", "French")}>
-            {t("French")}
-          </NavLink>
-          <NavLink onClick={() => changeLanguage("es", "Spanish")}>
-            {t("Spanish")}
-          </NavLink>
-        </div>
+        <LanguageQuestionWrapper>
+          <QuestionHeader>
+            {t("What is your preferred language?")}
+          </QuestionHeader>
+          <h4>Choose language</h4>
+          <LanguageLiNavLinkWrapper>
+            <LanguageNavLink onClick={() => changeLanguage("en", "English")}>
+              {t("English")}
+            </LanguageNavLink>
+            <LanguageNavLink onClick={() => changeLanguage("de", "German")}>
+              {t("German")}
+            </LanguageNavLink>
+            <LanguageNavLink onClick={() => changeLanguage("fr", "French")}>
+              {t("French")}
+            </LanguageNavLink>
+            <LanguageNavLink onClick={() => changeLanguage("es", "Spanish")}>
+              {t("Spanish")}
+            </LanguageNavLink>
+          </LanguageLiNavLinkWrapper>
+        </LanguageQuestionWrapper>
       )}
 
       {nextQuestionId > 1 && (
