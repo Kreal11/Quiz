@@ -10,6 +10,11 @@
   "What do you hate the most in a book?": "Was hassen Sie am meisten an einem Buch?",
   "What are your favorite topics?": "Was sind Ihre Lieblingsthemen?",
 
+  "single-select": "Einzelauswahl",
+  "single-select-image": "Einzelauswahl Bild",
+  "multiple-select": "Mehrfachauswahl",
+  "bubble": "Blase",
+
   "English": "Englisch",
   "German": "Deutsch",
   "French": "Französisch",

@@ -10,7 +10,6 @@ const Quiz = () => {
   const [quizResults, setQuizResults] = useState([]);
   console.log(quizResults);
   const navigate = useNavigate();
-  const [currentLanguage, setCurrentLanguage] = useState("en");
   const { t, i18n } = useTranslation();
 
   const getDefaultNextQuestionId = () => {
@@ -53,38 +52,65 @@ const Quiz = () => {
   const handleAnswerSelection = (answer) => {
     const updatedResults = { ...quizResults };
 
-    updatedResults[question.title] = {
+    updatedResults[t(question.title)] = {
       answer: answer,
-      type: question.type,
+      type: t(question.type),
     };
 
     setQuizResults(updatedResults);
     setNextQuestionId((prev) => prev + 1);
   };
 
-  const changeLanguage = (lng) => {
-    setCurrentLanguage(lng);
+  const changeLanguage = (lng, language) => {
     i18n.changeLanguage(lng);
+    // setTimeout(() => {
+    const updatedResults = { ...quizResults };
+    updatedResults["What is your preferred language?"] = {
+      answer: t(language),
+      type: t("single-select"),
+    };
+    setQuizResults(updatedResults);
+    // }, 2000);
+
+    setNextQuestionId((prev) => prev + 1);
   };
 
   return (
-    <ul>
-      <div>
-        <button onClick={() => changeLanguage("en")}>English</button>
-        <button onClick={() => changeLanguage("de")}>German</button>
-        <button onClick={() => changeLanguage("fr")}>French</button>
-        <button onClick={() => changeLanguage("es")}>Spanish</button>
-      </div>
-      {nextQuestionId > 1 && <NavLink onClick={handleGoBack}>Back</NavLink>}
-      {question && (
-        <Question
-          handleAnswerSelection={handleAnswerSelection}
-          setNextQuestionId={setNextQuestionId}
-          {...question}
-          key={question.id}
-        />
+    <>
+      {nextQuestionId === 1 && (
+        <div>
+          <h3>{t("What is your preferred language?")}</h3>
+          <NavLink onClick={() => changeLanguage("en", "English")}>
+            {t("English")}
+          </NavLink>
+          <NavLink onClick={() => changeLanguage("de", "German")}>
+            {t("German")}
+          </NavLink>
+          <NavLink onClick={() => changeLanguage("fr", "French")}>
+            {t("French")}
+          </NavLink>
+          <NavLink onClick={() => changeLanguage("es", "Spanish")}>
+            {t("Spanish")}
+          </NavLink>
+        </div>
       )}
-    </ul>
+
+      {nextQuestionId > 1 && (
+        <>
+          <NavLink onClick={handleGoBack}>Back</NavLink>
+          <ul>
+            {question && (
+              <Question
+                handleAnswerSelection={handleAnswerSelection}
+                setNextQuestionId={setNextQuestionId}
+                {...question}
+                key={question.id}
+              />
+            )}
+          </ul>
+        </>
+      )}
+    </>
   );
 };
 
