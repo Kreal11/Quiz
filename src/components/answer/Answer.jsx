@@ -15,15 +15,15 @@ const Answer = ({
   const handleChange = () => {
     if (type === "multiple-select" || type === "bubble") {
       const updatedAnswers = [...selectedAnswers];
-      const index = updatedAnswers.indexOf(t(text));
+      const index = updatedAnswers.indexOf(text);
       if (index === -1) {
-        updatedAnswers.push(t(text));
+        updatedAnswers.push(text);
       } else {
         updatedAnswers.splice(index, 1);
       }
       setSelectedAnswers(updatedAnswers);
     } else {
-      handleAnswerSelection(t(text));
+      handleAnswerSelection(text);
     }
   };
 
@@ -39,7 +39,7 @@ const Answer = ({
           <input
             type="checkbox"
             onChange={handleChange}
-            checked={selectedAnswers.includes(t(text))}
+            checked={selectedAnswers.includes(text)}
           />
           {t(text)}
         </label>

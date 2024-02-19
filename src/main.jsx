@@ -8,8 +8,8 @@ import "./i18n";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <BrowserRouter basename="/api/quiz">
-      <App />
+  <BrowserRouter basename="">
+    <App />
     <ToastContainer autoClose={1000} theme="dark" />
   </BrowserRouter>
   // </React.StrictMode>
