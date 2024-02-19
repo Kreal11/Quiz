@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { AnswersWrapper } from "./Answer.styled";
 
 const Answer = ({
+  emoji,
   questionId,
   text,
   handleAnswerSelection,
@@ -27,22 +29,27 @@ const Answer = ({
     }
   };
 
+  console.log(emoji);
+
   return (
     <div>
       {(type === "single-select" || type === "single-select-image") && (
-        <>
-          <p onClick={handleChange}>{t(text)}</p>
-        </>
+        <AnswersWrapper onClick={handleChange} $emoji={emoji}>
+          {emoji && <img src={emoji} height="52" width="52" />}
+          <p>{t(text)}</p>
+        </AnswersWrapper>
       )}
       {(type === "multiple-select" || type === "bubble") && (
+        // <div>
         <label>
+          {t(text)}
           <input
             type="checkbox"
             onChange={handleChange}
             checked={selectedAnswers.includes(text)}
           />
-          {t(text)}
         </label>
+        // </div>
       )}
     </div>
   );

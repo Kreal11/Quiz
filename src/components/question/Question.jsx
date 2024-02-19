@@ -2,6 +2,11 @@ import { useState } from "react";
 import Answer from "../answer/Answer";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import {
+  AnswersList,
+  OtherQuestionsHeader,
+  QuestionSupportHeader,
+} from "./Question.styled";
 
 const Question = ({
   id,
@@ -33,9 +38,11 @@ const Question = ({
     <li>
       {id > 1 && (
         <>
-          <h3>{t(title)}</h3>
-          {support_text && <h4>{support_text}</h4>}
-          <ul>
+          <OtherQuestionsHeader>{t(title)}</OtherQuestionsHeader>
+          {support_text && (
+            <QuestionSupportHeader>{support_text}</QuestionSupportHeader>
+          )}
+          <AnswersList $emoji={id === "2"} $age={id === "3"}>
             {answers &&
               answers?.map((answer) => (
                 <Answer
@@ -49,7 +56,7 @@ const Question = ({
                   questionId={id}
                 />
               ))}
-          </ul>
+          </AnswersList>
           {(type === "multiple-select" || type === "bubble") && (
             <button
               onClick={handleNextQuestion}

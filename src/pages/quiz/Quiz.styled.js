@@ -16,7 +16,7 @@ export const LanguageQuestionWrapper = styled.div`
   }
 `;
 
-export const QuestionHeader = styled.h3`
+export const LanguageQuestionHeader = styled.h3`
   font-size: 28px;
   font-weight: 700;
   line-height: 1.21;

@@ -7,8 +7,8 @@ import { useTranslation } from "react-i18next";
 import {
   LanguageLiNavLinkWrapper,
   LanguageNavLink,
+  LanguageQuestionHeader,
   LanguageQuestionWrapper,
-  QuestionHeader,
   QuizWrapper,
   SvgBackArrow,
 } from "./Quiz.styled";
@@ -86,9 +86,9 @@ const Quiz = () => {
     <QuizWrapper>
       {nextQuestionId === 1 && (
         <LanguageQuestionWrapper>
-          <QuestionHeader>
+          <LanguageQuestionHeader>
             {t("What is your preferred language?")}
-          </QuestionHeader>
+          </LanguageQuestionHeader>
           <h4>Choose language</h4>
           <LanguageLiNavLinkWrapper>
             <LanguageNavLink onClick={() => changeLanguage("en", "English")}>
