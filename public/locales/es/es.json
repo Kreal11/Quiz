@@ -4,6 +4,9 @@
   "email": "Correo electrónico",
   "Email": "Correo electrónico",
 
+  "title": "Título",
+  "order": "Orden",
+
   "What is your preferred language?": "¿Cuál es tu idioma preferido?",
   "What gender do you identify with?": "¿Con qué género te identificas?",
   "What is your age?": "¿Cuántos años tienes?",

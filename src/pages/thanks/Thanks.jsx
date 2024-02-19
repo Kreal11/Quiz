@@ -10,7 +10,9 @@ const Thanks = () => {
 
   const handleDownloadAnswers = () => {
     const quizResults = JSON.parse(localStorage.getItem("quizData")) || {};
-    let csvContent = "order,title,type,answer\n";
+    let csvContent = `${t("order")},${t("title")},${t("type")},${t(
+      "answer"
+    )}\n`;
 
     let order = 1;
     for (const key in quizResults) {
@@ -23,8 +25,8 @@ const Thanks = () => {
           answerValue = `"${item}"`;
           type = "email";
         } else {
-          answerValue = item.answer;
-          type = item.type;
+          answerValue = t(item.answer);
+          type = t(item.type);
           if (Array.isArray(answerValue)) {
             answerValue = `"${answerValue.join(",")}"`;
           } else {
@@ -32,7 +34,7 @@ const Thanks = () => {
           }
         }
 
-        csvContent += `${order},${key},${type},${answerValue}\n`;
+        csvContent += `${order},${t(key)},${type},${answerValue}\n`;
         order++;
       }
     }

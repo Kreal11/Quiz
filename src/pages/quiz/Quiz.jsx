@@ -52,9 +52,9 @@ const Quiz = () => {
   const handleAnswerSelection = (answer) => {
     const updatedResults = { ...quizResults };
 
-    updatedResults[t(question.title)] = {
+    updatedResults[question.title] = {
       answer: answer,
-      type: t(question.type),
+      type: question.type,
     };
 
     setQuizResults(updatedResults);
@@ -66,8 +66,8 @@ const Quiz = () => {
     // setTimeout(() => {
     const updatedResults = { ...quizResults };
     updatedResults["What is your preferred language?"] = {
-      answer: t(language),
-      type: t("single-select"),
+      answer: language,
+      type: "single-select",
     };
     setQuizResults(updatedResults);
     // }, 2000);
