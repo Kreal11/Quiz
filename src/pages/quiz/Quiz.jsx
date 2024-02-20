@@ -12,7 +12,7 @@ import {
   QuizWrapper,
   SvgBackArrow,
 } from "./Quiz.styled";
-import sprite from "../../assets/sprite.svg";
+import sprite from "../../assets/sprite/sprite.svg";
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);

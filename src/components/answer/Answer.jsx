@@ -5,7 +5,7 @@ import {
   Label,
   SvgChecked,
 } from "./Answer.styled";
-import sprite from "../../assets/sprite.svg";
+import sprite from "../../assets/sprite/sprite.svg";
 import { useState } from "react";
 import action from "../../assets/images/emoji/action.png";
 import werewolf from "../../assets/images/emoji/werewolf.png";
