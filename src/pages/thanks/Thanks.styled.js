@@ -23,7 +23,7 @@ export const ThankYouHeader = styled.h3`
   font-weight: 400;
   line-height: 1.22;
   letter-spacing: 0em;
-  margin-top: 101px;
+  margin-top: 40px;
 `;
 
 export const SupportHeader = styled.h4`
