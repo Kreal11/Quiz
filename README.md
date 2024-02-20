@@ -33,7 +33,12 @@ npm run dev
   <img src="https://img.shields.io/badge/i18next-21.7.2-yellow?style=plastic&logo=i18next" alt="i18next">
   &nbsp;&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/prop--types-15.8.3-orange?style=plastic" alt="prop-types">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/Axios-0.21.1-blue?style=plastic" alt="Axios">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/react--router--dom-6.2.1-green?style=plastic" alt="react-router-dom">
 </p>
+
 
 ### Credits
 Made with 💜 by Kyrylo Shyrokov
