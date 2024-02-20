@@ -37,10 +37,7 @@ const Question = ({
         <QuestionsWrapper>
           {id === 4 && (
             <QuestionsHeader>
-              <Trans t={t} i18nKey="hateMostInABook">
-                What do you <span style={{ color: "red" }}>hate</span> the most
-                in a book?
-              </Trans>
+              <p>{t("What do you hate the most in a book?")}</p>
             </QuestionsHeader>
           )}
           {id !== 4 && <QuestionsHeader>{t(title)}</QuestionsHeader>}
