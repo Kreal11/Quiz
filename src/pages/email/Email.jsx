@@ -80,7 +80,7 @@ const Email = () => {
             onFocus={handleFocus}
             onBlur={handleBlur}
           />
-          {error && <ErrorMessage>{error}</ErrorMessage>}
+          {error && focused && <ErrorMessage>{error}</ErrorMessage>}
         </form>
         <AgreeMessage>
           {t("By continuing I agree with Privacy policy and Terms of use")}
