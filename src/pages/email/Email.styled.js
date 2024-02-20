@@ -71,6 +71,7 @@ export const SubmitButton = styled.button`
   background-color: var(--button-color);
   width: 100%;
   transition: opacity 0.5s ease-in;
+  color: var(--answer-color);
 
   display: inline-flex;
   justify-content: center;
@@ -89,4 +90,12 @@ export const ErrorMessage = styled.p`
   position: absolute;
   top: 85px;
   left: 24px;
+`;
+
+export const AgreeMessage = styled.p`
+  font-family: Albert Sans;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0em;
 `;

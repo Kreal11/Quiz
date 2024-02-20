@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import {
+  AgreeMessage,
   EmailFormWrapper,
   EmailHeader,
   EmailHeaderSupportText,
@@ -81,7 +82,9 @@ const Email = () => {
           />
           {error && <ErrorMessage>{error}</ErrorMessage>}
         </form>
-        <p>{t("By continuing I agree with Privacy policy and Terms of use")}</p>
+        <AgreeMessage>
+          {t("By continuing I agree with Privacy policy and Terms of use")}
+        </AgreeMessage>
       </EmailFormWrapper>
       <SubmitButton
         type="submit"

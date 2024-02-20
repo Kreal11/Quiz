@@ -7,13 +7,13 @@ import {
 } from "./Answer.styled";
 import sprite from "../../assets/sprite.svg";
 import { useState } from "react";
-import action from "../../assets/images/action.png";
-import werewolf from "../../assets/images/werewolf.png";
-import bad_boy from "../../assets/images/bad_boy.png";
-import billionaire from "../../assets/images/billionaire.png";
-import royal_obsession from "../../assets/images/royal_obsession.png";
-import young_adult from "../../assets/images/young_adult.png";
-import romance from "../../assets/images/romance.png";
+import action from "../../assets/images/emoji/action.png";
+import werewolf from "../../assets/images/emoji/werewolf.png";
+import bad_boy from "../../assets/images/emoji/bad_boy.png";
+import billionaire from "../../assets/images/emoji/billionaire.png";
+import royal_obsession from "../../assets/images/emoji/royal_obsession.png";
+import young_adult from "../../assets/images/emoji/young_adult.png";
+import romance from "../../assets/images/emoji/romance.png";
 
 const imagePaths = {
   action: action,
@@ -64,7 +64,9 @@ const Answer = ({
     <li>
       {(type === "single-select" || type === "single-select-image") && (
         <AnswersWrapper onClick={handleChange} $emoji={emoji}>
-          {emoji && <img src={emoji} height="52" width="52" />}
+          {emoji && (
+            <img src={emoji} height="52" width="52" alt="gender emoji" />
+          )}
           <p>{t(text)}</p>
         </AnswersWrapper>
       )}
@@ -74,7 +76,9 @@ const Answer = ({
           selected={selected}
           $bubble={type === "bubble"}
         >
-          {type === "bubble" && <img src={imagePaths[img]} />}
+          {type === "bubble" && (
+            <img src={imagePaths[img]} alt={`${img} emoji`} />
+          )}
           {t(text)}
           <CheckboxInput
             $bubble={type === "bubble"}

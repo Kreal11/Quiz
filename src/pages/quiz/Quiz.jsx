@@ -89,7 +89,7 @@ const Quiz = () => {
           <LanguageQuestionHeader>
             {t("What is your preferred language?")}
           </LanguageQuestionHeader>
-          <h4>Choose language</h4>
+          <h4>{t("Choose language")}</h4>
           <LanguageLiNavLinkWrapper>
             <LanguageNavLink onClick={() => changeLanguage("en", "English")}>
               {t("English")}
