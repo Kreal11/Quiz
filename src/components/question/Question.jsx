@@ -82,7 +82,7 @@ const Question = ({
 export default Question;
 
 Question.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   support_text: PropTypes.string,
   answers: PropTypes.arrayOf(
