@@ -49,6 +49,7 @@ export const QuestionsButton = styled.button`
   letter-spacing: -0.01em;
   background-color: var(--button-color);
   width: 100%;
+  transition: opacity 0.5s ease-in;
 
   display: inline-flex;
   justify-content: center;

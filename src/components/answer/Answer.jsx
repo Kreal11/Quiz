@@ -6,6 +6,7 @@ import {
   SvgChecked,
 } from "./Answer.styled";
 import sprite from "../../assets/sprite.svg";
+import { useState } from "react";
 
 const Answer = ({
   emoji,
@@ -17,6 +18,14 @@ const Answer = ({
   selectedAnswers,
 }) => {
   const { t } = useTranslation();
+
+  const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setTimeout(() => {
+      setSelected(!selected);
+    }, 0);
+  };
 
   const handleChange = () => {
     if (type === "multiple-select" || type === "bubble") {
@@ -42,7 +51,7 @@ const Answer = ({
         </AnswersWrapper>
       )}
       {(type === "multiple-select" || type === "bubble") && (
-        <Label>
+        <Label onClick={handleClick} selected={selected}>
           {t(text)}
           <CheckboxInput
             $multiple={type === "multiple-select"}

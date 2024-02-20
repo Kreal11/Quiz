@@ -31,6 +31,7 @@ export const AnswersWrapper = styled.div`
 `;
 
 export const Label = styled.label`
+  box-sizing: inherit;
   font-family: Albert Sans;
   font-size: 17px;
   font-weight: 500;
@@ -41,8 +42,13 @@ export const Label = styled.label`
   justify-content: space-between;
   align-items: center;
   border-radius: 16px;
-  background-color: var(--answer-bg-color);
+  background-color: ${({ selected }) =>
+    selected ? "var(--checked-answer-color)" : "var(--answer-bg-color)"};
+  border: ${({ selected }) =>
+    selected ? "2px solid var(--accent-color)" : "2px solid transparent"};
   position: relative;
+
+  transition: background-color 0.5s ease-in, border 0.5s ease-in;
 `;
 
 export const CheckboxInput = styled.input`
