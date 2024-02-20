@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 import {
   AnswersWrapper,
   CheckboxInput,
@@ -28,7 +29,6 @@ const imagePaths = {
 const Answer = ({
   img,
   emoji,
-  questionId,
   text,
   handleAnswerSelection,
   type,
@@ -99,3 +99,13 @@ const Answer = ({
 };
 
 export default Answer;
+
+Answer.propTypes = {
+  img: PropTypes.string,
+  emoji: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  handleAnswerSelection: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  setSelectedAnswers: PropTypes.func.isRequired,
+  selectedAnswers: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

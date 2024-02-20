@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Answer from "../answer/Answer";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import {
   AnswersList,
   QuestionSupportHeader,
@@ -8,6 +8,7 @@ import {
   QuestionsHeader,
   QuestionsWrapper,
 } from "./Question.styled";
+import PropTypes from "prop-types";
 
 const Question = ({
   id,
@@ -79,3 +80,20 @@ const Question = ({
 };
 
 export default Question;
+
+Question.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  support_text: PropTypes.string,
+  answers: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      img: PropTypes.string,
+      emoji: PropTypes.string,
+    })
+  ).isRequired,
+  setNextQuestionId: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+  handleAnswerSelection: PropTypes.func.isRequired,
+};
