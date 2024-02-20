@@ -9,6 +9,7 @@ export const AnswersWrapper = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
+    max-width: 53px;
     border-radius: 12px;
     padding: 28px 24px;
     background-color: var(--answer-bg-color)
