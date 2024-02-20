@@ -23,11 +23,17 @@ npm run dev
 
 ### Technologies Used
 
-- ![Vite](https://img.shields.io/badge/Vite-2.7.12-ff69b4?style=plastic&logo=vite)
-- ![React](https://img.shields.io/badge/React-17.0.2-blueviolet?style=plastic&logo=react)
-- ![styled-components](https://img.shields.io/badge/styled--components-5.3.1-9cf?style=plastic&logo=styled-components)
-- ![i18next](https://img.shields.io/badge/i18next-21.7.2-yellow?style=plastic&logo=i18next)
-- ![prop-types](https://img.shields.io/badge/prop--types-15.8.3-orange?style=plastic)
+<p align="center">
+  <img src="https://img.shields.io/badge/Vite-2.7.12-ff69b4?style=plastic&logo=vite" alt="Vite">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/React-17.0.2-blueviolet?style=plastic&logo=react" alt="React">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/styled--components-5.3.1-9cf?style=plastic&logo=styled-components" alt="styled-components">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/i18next-21.7.2-yellow?style=plastic&logo=i18next" alt="i18next">
+  &nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/prop--types-15.8.3-orange?style=plastic" alt="prop-types">
+</p>
 
 ### Credits
 Made with 💜 by Kyrylo Shyrokov
