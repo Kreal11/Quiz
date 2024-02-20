@@ -1,7 +1,11 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
-import { AnswersWrapper } from "./Answer.styled";
+import {
+  AnswersWrapper,
+  CheckboxInput,
+  Label,
+  SvgChecked,
+} from "./Answer.styled";
+import sprite from "../../assets/sprite.svg";
 
 const Answer = ({
   emoji,
@@ -29,8 +33,6 @@ const Answer = ({
     }
   };
 
-  console.log(emoji);
-
   return (
     <div>
       {(type === "single-select" || type === "single-select-image") && (
@@ -40,16 +42,20 @@ const Answer = ({
         </AnswersWrapper>
       )}
       {(type === "multiple-select" || type === "bubble") && (
-        // <div>
-        <label>
+        <Label>
           {t(text)}
-          <input
+          <CheckboxInput
+            $multiple={type === "multiple-select"}
             type="checkbox"
             onChange={handleChange}
             checked={selectedAnswers.includes(text)}
           />
-        </label>
-        // </div>
+          {type === "multiple-select" && (
+            <SvgChecked>
+              <use xlinkHref={`${sprite}#icon-checked`}></use>
+            </SvgChecked>
+          )}
+        </Label>
       )}
     </div>
   );

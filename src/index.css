@@ -9,8 +9,9 @@
   --invalid-color: #d0006e;
   --question-color: #f2f3f5;
   --accent-color: #e4229b;
-  --disabled-color: #e4229c;
+  --button-color: #e4229c;
   --support-color: #c4c8cc;
+  --checkbox-bg-color: #6d4376;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

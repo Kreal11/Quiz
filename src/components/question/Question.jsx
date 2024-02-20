@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Answer from "../answer/Answer";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
 import {
   AnswersList,
-  OtherQuestionsHeader,
   QuestionSupportHeader,
+  QuestionsButton,
+  QuestionsHeader,
+  QuestionsWrapper,
 } from "./Question.styled";
 
 const Question = ({
@@ -37,12 +38,12 @@ const Question = ({
   return (
     <li>
       {id > 1 && (
-        <>
-          <OtherQuestionsHeader>{t(title)}</OtherQuestionsHeader>
+        <QuestionsWrapper>
+          <QuestionsHeader>{t(title)}</QuestionsHeader>
           {support_text && (
             <QuestionSupportHeader>{support_text}</QuestionSupportHeader>
           )}
-          <AnswersList $emoji={id === "2"} $age={id === "3"}>
+          <AnswersList $emoji={id === "2"} $age={id === "3"} $book={id === "4"}>
             {answers &&
               answers?.map((answer) => (
                 <Answer
@@ -58,14 +59,14 @@ const Question = ({
               ))}
           </AnswersList>
           {(type === "multiple-select" || type === "bubble") && (
-            <button
+            <QuestionsButton
               onClick={handleNextQuestion}
               disabled={!hasSelectedAnswers || isBubbleMaxSelected}
             >
               {t("Next")}
-            </button>
+            </QuestionsButton>
           )}
-        </>
+        </QuestionsWrapper>
       )}
     </li>
   );
