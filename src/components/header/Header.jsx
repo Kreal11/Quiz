@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import { HeaderWrapper, ProgressBarDiv } from "./Header.styled";
+import sprite from "../../assets/sprite.svg";
 
 const Header = () => {
   const { id } = useParams();
 
-  const progress = (parseInt(id) / 5) * 100 + 10;
+  const currentPage = parseInt(id);
+  const progress = (currentPage / 5) * 100 + 10;
 
   return (
     <HeaderWrapper>

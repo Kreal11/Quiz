@@ -16,7 +16,7 @@ export const LanguageQuestionWrapper = styled.div`
   }
 `;
 
-export const QuestionHeader = styled.h3`
+export const LanguageQuestionHeader = styled.h3`
   font-size: 28px;
   font-weight: 700;
   line-height: 1.21;
@@ -46,4 +46,16 @@ export const LanguageNavLink = styled(NavLink)`
   letter-spacing: 0em;
   padding: 18px 20px;
   text-decoration: none;
+`;
+
+export const QuizWrapper = styled.div`
+  position: relative;
+`;
+
+export const SvgBackArrow = styled.svg`
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: -80px;
+  left: 0;
 `;

@@ -1,5 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import {
+  GetResultsButton,
+  RetakeQuizNavLink,
+  SupportHeader,
+  ThankYouHeader,
+  ThanksWrapper,
+} from "./Thanks.styled";
+import checkmark from "../../assets/images/thanks/checkmark.png";
+import download from "../../assets/images/thanks/download.png";
 
 const Thanks = () => {
   const { t } = useTranslation();
@@ -49,15 +58,22 @@ const Thanks = () => {
   };
 
   return (
-    <div>
-      <h3>{t("Thanks")}</h3>
-      <button onClick={handleDownloadAnswers}>
-        {t("Download my answers")}
-      </button>
-      <NavLink to="/questions/1" onClick={handleRetakeQuiz}>
-        {t("Retake my quiz")}
-      </NavLink>
-    </div>
+    <ThanksWrapper>
+      <div>
+        <ThankYouHeader>{t("Thank you")}</ThankYouHeader>
+        <SupportHeader>{t("for supporting us and passing quiz")}</SupportHeader>
+        <img src={checkmark} alt="checkmark" />
+      </div>
+      <div>
+        <GetResultsButton onClick={handleDownloadAnswers}>
+          <img src={download} alt="download" />
+          {t("Download my answers")}
+        </GetResultsButton>
+        <RetakeQuizNavLink to="/questions/1" onClick={handleRetakeQuiz}>
+          {t("Retake my quiz")}
+        </RetakeQuizNavLink>
+      </div>
+    </ThanksWrapper>
   );
 };
 

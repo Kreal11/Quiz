@@ -9,12 +9,14 @@
   --invalid-color: #d0006e;
   --question-color: #f2f3f5;
   --accent-color: #e4229b;
-  --disabled-color: #e4229c;
+  --button-color: #e4229c;
+  --checked-answer-color: #e4229b33;
   --support-color: #c4c8cc;
+  --checkbox-bg-color: #6d4376;
+  --loader-outline-color: #e8eaf2;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -62,7 +64,7 @@ img,
 svg {
   display: block;
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
 }
 
 @media (prefers-color-scheme: light) {

@@ -10,7 +10,7 @@
   "What is your preferred language?": "Was ist Ihre bevorzugte Sprache?",
   "What gender do you identify with?": "Mit welchem Geschlecht identifizieren Sie sich?",
   "What is your age?": "Wie alt sind Sie?",
-  "What do you hate the most in a book?": "Was hassen Sie am meisten an einem Buch?",
+  "What do you <1>{{hate}}</1> the most in a book?": "Was hassen Sie am meisten an einem Buch?",
   "What are your favorite topics?": "Was sind Ihre Lieblingsthemen?",
 
   "single-select": "Einzelauswahl",
@@ -54,6 +54,16 @@
   "Thanks": "Danke",
   "Download my answers": "Meine Antworten herunterladen",
   "Retake my quiz": "Mein Quiz erneut machen",
+
+  "Choose language": "Sprache wählen",
+  "Please share how do you identify yourself": "Bitte teilen Sie mit, wie Sie sich identifizieren",
+  "Choose up to 3 topics you like": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+  "Finding collections for you...": "Sammlungen für Sie finden...",
+  "Thank you": "Danke schön",
+  "for supporting us and passing quiz": "für Ihre Unterstützung und das Bestehen des Quiz",
+  "Field is required": "Feld ist erforderlich",
+  "Email cannot be longer than 32 characters": "E-Mail darf nicht länger als 32 Zeichen sein",
+  "Invalid email format": "Ungültiges E-Mail-Format",
 
   "Next": "Weiter"
 }

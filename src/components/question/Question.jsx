@@ -1,7 +1,14 @@
 import { useState } from "react";
 import Answer from "../answer/Answer";
-import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
+import {
+  AnswersList,
+  HateSpan,
+  QuestionSupportHeader,
+  QuestionsButton,
+  QuestionsHeader,
+  QuestionsWrapper,
+} from "./Question.styled";
 
 const Question = ({
   id,
@@ -28,14 +35,30 @@ const Question = ({
   // const handleChangeLanguage = (lang) => {
   //   i18n.changeLanguage(lang);
   // };
+  console.log(id);
 
   return (
     <li>
       {id > 1 && (
-        <>
-          <h3>{t(title)}</h3>
-          {support_text && <h4>{support_text}</h4>}
-          <ul>
+        <QuestionsWrapper>
+          {id === 4 && (
+            <QuestionsHeader>
+              <Trans t={t} i18nKey="hateMostInABook">
+                What do you <span style={{ color: "red" }}>hate</span> the most
+                in a book?
+              </Trans>
+            </QuestionsHeader>
+          )}
+          {id !== 4 && <QuestionsHeader>{t(title)}</QuestionsHeader>}
+          {support_text && (
+            <QuestionSupportHeader>{support_text}</QuestionSupportHeader>
+          )}
+          <AnswersList
+            $emoji={id === "2"}
+            $age={id === "3"}
+            $book={id === "4"}
+            $topics={id === "5"}
+          >
             {answers &&
               answers?.map((answer) => (
                 <Answer
@@ -49,16 +72,16 @@ const Question = ({
                   questionId={id}
                 />
               ))}
-          </ul>
+          </AnswersList>
           {(type === "multiple-select" || type === "bubble") && (
-            <button
+            <QuestionsButton
               onClick={handleNextQuestion}
               disabled={!hasSelectedAnswers || isBubbleMaxSelected}
             >
               {t("Next")}
-            </button>
+            </QuestionsButton>
           )}
-        </>
+        </QuestionsWrapper>
       )}
     </li>
   );

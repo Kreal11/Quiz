@@ -7,7 +7,7 @@
   "What is your preferred language?": "What is your preferred language?",
   "What gender do you identify with?": "What gender do you identify with?",
   "What is your age?": "What is your age?",
-  "What do you hate the most in a book?": "What do you hate the most in a book?",
+  "hateMostInABook": "What do you <1>{{hate}}</1> the most in a book?",
   "What are your favorite topics?": "What are your favorite topics?",
 
   "single-select": "single-select",
@@ -45,12 +45,20 @@
   "Enter your email to get full access": "Enter your email to get full access",
   "By continuing I agree with Privacy policy and Terms of use": "By continuing I agree with Privacy policy and Terms of use",
   "Your email": "Your email",
+  "Field is required": "Field is required",
+  "Email cannot be longer than 32 characters": "Email cannot be longer than 32 characters",
+  "Invalid email format": "Invalid email format",
 
-  "Preparing results for you": "Preparing results for you",
+  "Finding collections for you...": "Finding collections for you...",
 
-  "Thanks": "Thanks",
+  "Thank you": "Thank you",
+  "for supporting us and passing quiz": "for supporting us and passing quiz",
   "Download my answers": "Download my answers",
   "Retake my quiz": "Retake my quiz",
+
+  "Choose language": "Choose language",
+  "Please share how do you identify yourself": "Please share how do you identify yourself",
+  "Choose up to 3 topics you like": "Choose up to 3 topics you like",
 
   "Next": "Next"
 }

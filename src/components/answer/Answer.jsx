@@ -1,8 +1,33 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import {
+  AnswersWrapper,
+  CheckboxInput,
+  Label,
+  SvgChecked,
+} from "./Answer.styled";
+import sprite from "../../assets/sprite.svg";
+import { useState } from "react";
+import action from "../../assets/images/emoji/action.png";
+import werewolf from "../../assets/images/emoji/werewolf.png";
+import bad_boy from "../../assets/images/emoji/bad_boy.png";
+import billionaire from "../../assets/images/emoji/billionaire.png";
+import royal_obsession from "../../assets/images/emoji/royal_obsession.png";
+import young_adult from "../../assets/images/emoji/young_adult.png";
+import romance from "../../assets/images/emoji/romance.png";
+
+const imagePaths = {
+  action: action,
+  werewolf: werewolf,
+  bad_boy: bad_boy,
+  billionaire: billionaire,
+  royal_obsession: royal_obsession,
+  young_adult: young_adult,
+  romance: romance,
+};
 
 const Answer = ({
+  img,
+  emoji,
   questionId,
   text,
   handleAnswerSelection,
@@ -11,6 +36,14 @@ const Answer = ({
   selectedAnswers,
 }) => {
   const { t } = useTranslation();
+
+  const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setTimeout(() => {
+      setSelected(!selected);
+    }, 0);
+  };
 
   const handleChange = () => {
     if (type === "multiple-select" || type === "bubble") {
@@ -28,23 +61,40 @@ const Answer = ({
   };
 
   return (
-    <div>
+    <li>
       {(type === "single-select" || type === "single-select-image") && (
-        <>
-          <p onClick={handleChange}>{t(text)}</p>
-        </>
+        <AnswersWrapper onClick={handleChange} $emoji={emoji}>
+          {emoji && (
+            <img src={emoji} height="52" width="52" alt="gender emoji" />
+          )}
+          <p>{t(text)}</p>
+        </AnswersWrapper>
       )}
       {(type === "multiple-select" || type === "bubble") && (
-        <label>
-          <input
+        <Label
+          onClick={handleClick}
+          selected={selected}
+          $bubble={type === "bubble"}
+        >
+          {type === "bubble" && (
+            <img src={imagePaths[img]} alt={`${img} emoji`} />
+          )}
+          {t(text)}
+          <CheckboxInput
+            $bubble={type === "bubble"}
+            $multiple={type === "multiple-select"}
             type="checkbox"
             onChange={handleChange}
             checked={selectedAnswers.includes(text)}
           />
-          {t(text)}
-        </label>
+          {type === "multiple-select" && (
+            <SvgChecked>
+              <use xlinkHref={`${sprite}#icon-checked`}></use>
+            </SvgChecked>
+          )}
+        </Label>
       )}
-    </div>
+    </li>
   );
 };
 
