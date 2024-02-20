@@ -7,8 +7,26 @@ import {
 } from "./Answer.styled";
 import sprite from "../../assets/sprite.svg";
 import { useState } from "react";
+import action from "../../assets/images/action.png";
+import werewolf from "../../assets/images/werewolf.png";
+import bad_boy from "../../assets/images/bad_boy.png";
+import billionaire from "../../assets/images/billionaire.png";
+import royal_obsession from "../../assets/images/royal_obsession.png";
+import young_adult from "../../assets/images/young_adult.png";
+import romance from "../../assets/images/romance.png";
+
+const imagePaths = {
+  action: action,
+  werewolf: werewolf,
+  bad_boy: bad_boy,
+  billionaire: billionaire,
+  royal_obsession: royal_obsession,
+  young_adult: young_adult,
+  romance: romance,
+};
 
 const Answer = ({
+  img,
   emoji,
   questionId,
   text,
@@ -43,7 +61,7 @@ const Answer = ({
   };
 
   return (
-    <div>
+    <li>
       {(type === "single-select" || type === "single-select-image") && (
         <AnswersWrapper onClick={handleChange} $emoji={emoji}>
           {emoji && <img src={emoji} height="52" width="52" />}
@@ -51,9 +69,15 @@ const Answer = ({
         </AnswersWrapper>
       )}
       {(type === "multiple-select" || type === "bubble") && (
-        <Label onClick={handleClick} selected={selected}>
+        <Label
+          onClick={handleClick}
+          selected={selected}
+          $bubble={type === "bubble"}
+        >
+          {type === "bubble" && <img src={imagePaths[img]} />}
           {t(text)}
           <CheckboxInput
+            $bubble={type === "bubble"}
             $multiple={type === "multiple-select"}
             type="checkbox"
             onChange={handleChange}
@@ -66,7 +90,7 @@ const Answer = ({
           )}
         </Label>
       )}
-    </div>
+    </li>
   );
 };
 

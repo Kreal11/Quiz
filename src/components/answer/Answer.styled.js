@@ -12,7 +12,8 @@ export const AnswersWrapper = styled.div`
     max-width: 53px;
     border-radius: 12px;
     padding: 28px 24px;
-    background-color: var(--answer-bg-color)
+    background-color: var(--answer-bg-color);
+    cursor: pointer;
   `}
 
   ${({ $emoji }) =>
@@ -27,11 +28,12 @@ export const AnswersWrapper = styled.div`
     font-weight: 500;
     line-height: 1.41px;
     letter-spacing: -0.01em;
+    cursor: pointer;
   `}
 `;
 
 export const Label = styled.label`
-  box-sizing: inherit;
+  cursor: pointer;
   font-family: Albert Sans;
   font-size: 17px;
   font-weight: 500;
@@ -49,6 +51,26 @@ export const Label = styled.label`
   position: relative;
 
   transition: background-color 0.5s ease-in, border 0.5s ease-in;
+
+  ${({ $bubble }) =>
+    $bubble &&
+    `
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%;
+    padding: 18px 8px 23px 8px;
+    background-color: var(--answer-bg-color);
+    font-family: Nunito Sans;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.23;
+    letter-spacing: 0.006em;
+    text-align: center;
+    width: 72px;
+    height: 47px;
+  `}
 `;
 
 export const CheckboxInput = styled.input`
@@ -93,6 +115,14 @@ export const CheckboxInput = styled.input`
     opacity: 1;
     transition: opacity 1.3s;
     }
+  `}
+
+  ${({ $bubble }) =>
+    $bubble &&
+    `
+     appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   `}
 `;
 

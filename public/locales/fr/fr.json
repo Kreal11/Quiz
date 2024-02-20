@@ -13,39 +13,19 @@
   "What do you hate the most in a book?": "Qu'est-ce que vous détestez le plus dans un livre?",
   "What are your favorite topics?": "Quels sont vos sujets préférés?",
 
-  "Quelle est votre langue préférée?": "Quelle est votre langue préférée?",
-  "Avec quel genre vous identifiez-vous?": "Avec quel genre vous identifiez-vous?",
-  "Quel âge avez-vous?": "Quel âge avez-vous?",
-  "Qu'est-ce que vous détestez le plus dans un livre?": "Qu'est-ce que vous détestez le plus dans un livre?",
-  "Quels sont vos sujets préférés?": "Quels sont vos sujets préférés?",
-
   "single-select": "Sélection unique",
   "single-select-image": "Sélection unique avec image",
   "multiple-select": "Sélection multiple",
   "bubble": "Bulle",
-
-  "Sélection unique": "Sélection unique",
-  "Sélection unique avec image": "Sélection unique avec image",
-  "Sélection multiple": "Sélection multiple",
-  "Bulle": "Bulle",
 
   "English": "Anglais",
   "German": "Allemand",
   "French": "Français",
   "Spanish": "Espagnol",
 
-  "Anglais": "Anglais",
-  "Allemand": "Allemand",
-  "Français": "Français",
-  "Espagnol": "Espagnol",
-
   "Male": "Masculin",
   "Female": "Féminin",
   "Other": "Autre",
-
-  "Masculin": "Masculin",
-  "Féminin": "Féminin",
-  "Autre": "Autre",
 
   "18-29": "18-29",
   "30-39": "30-39",
@@ -57,11 +37,6 @@
   "Lack of humor": "Manque d'humour",
   "Way too generic ending": "Trop générique",
 
-  "Manque de logique": "Manque de logique",
-  "Une vitesse lente": "Une vitesse lente",
-  "Manque d'humour": "Manque d'humour",
-  "Trop générique": "Trop générique",
-
   "Werewolf": "Loup-garou",
   "Action": "Action",
   "Royal Obsession": "Obsession royale",
@@ -69,12 +44,6 @@
   "Billionaire": "Milliardaire",
   "Young Adult": "Jeune adulte",
   "Romance": "Romance",
-
-  "Loup-garou": "Loup-garou",
-  "Obsession royale": "Obsession royale",
-  "Mauvais garçon": "Mauvais garçon",
-  "Milliardaire": "Milliardaire",
-  "Jeune adulte": "Jeune adulte",
 
   "Enter your email to get full access": "Entrez votre email pour obtenir un accès complet",
   "By continuing I agree with Privacy policy and Terms of use": "En continuant, j'accepte la politique de confidentialité et les conditions d'utilisation",

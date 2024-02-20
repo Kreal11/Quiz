@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FinalLoader, OuterCircle } from "./Loader.styled";
+import {
+  FinalLoader,
+  LoaderWrapper,
+  OuterCircle,
+  PreparingText,
+} from "./Loader.styled";
 import { useTranslation } from "react-i18next";
 
 const Loader = () => {
@@ -24,14 +29,14 @@ const Loader = () => {
   }, [navigate, progress]);
 
   return (
-    <>
+    <LoaderWrapper>
       <OuterCircle $progress={progress}>
         <FinalLoader>
           <p>{progress}%</p>
         </FinalLoader>
       </OuterCircle>
-      <p>{t("Preparing results for you")}</p>
-    </>
+      <PreparingText>{t("Finding collections for you...")}</PreparingText>
+    </LoaderWrapper>
   );
 };
 

@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import {
+  EmailFormWrapper,
+  EmailHeader,
+  EmailHeaderSupportText,
+  EmailInput,
+  EmailWrapper,
+  SubmitButton,
+} from "./Email.styled";
 
 const Email = () => {
   const [email, setEmail] = useState("");
@@ -28,23 +36,29 @@ const Email = () => {
     setEmail("");
   };
   return (
-    <div>
-      <h3>{t("Email")}</h3>
-      <p>{t("Enter your email to get full access")}</p>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder={t("Your email")}
-          value={email}
-          onChange={handleEmailChange}
-          disabled={redirecting}
-        />
-        <button type="submit" disabled={redirecting}>
-          {t("Next")}
-        </button>
-      </form>
-      <p>{t("By continuing I agree with Privacy policy and Terms of use")}</p>
-    </div>
+    <EmailWrapper>
+      <EmailFormWrapper>
+        <div>
+          <EmailHeader>{t("Email")}</EmailHeader>
+          <EmailHeaderSupportText>
+            {t("Enter your email to get full access")}
+          </EmailHeaderSupportText>
+        </div>
+        <form action="">
+          <EmailInput
+            type="text"
+            placeholder={t("Your email")}
+            value={email}
+            onChange={handleEmailChange}
+            disabled={redirecting}
+          />
+        </form>
+        <p>{t("By continuing I agree with Privacy policy and Terms of use")}</p>
+      </EmailFormWrapper>
+      <SubmitButton type="submit" disabled={redirecting} onClick={handleSubmit}>
+        {t("Next")}
+      </SubmitButton>
+    </EmailWrapper>
   );
 };
 

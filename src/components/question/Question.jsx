@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Answer from "../answer/Answer";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import {
   AnswersList,
+  HateSpan,
   QuestionSupportHeader,
   QuestionsButton,
   QuestionsHeader,
@@ -34,16 +35,30 @@ const Question = ({
   // const handleChangeLanguage = (lang) => {
   //   i18n.changeLanguage(lang);
   // };
+  console.log(id);
 
   return (
     <li>
       {id > 1 && (
         <QuestionsWrapper>
-          <QuestionsHeader>{t(title)}</QuestionsHeader>
+          {id === 4 && (
+            <QuestionsHeader>
+              <Trans t={t} i18nKey="What do you hate the most in a book?">
+                What do you <span style={{ color: "red" }}>hate</span> the most
+                in a book?
+              </Trans>
+            </QuestionsHeader>
+          )}
+          {id !== 4 && <QuestionsHeader>{t(title)}</QuestionsHeader>}
           {support_text && (
             <QuestionSupportHeader>{support_text}</QuestionSupportHeader>
           )}
-          <AnswersList $emoji={id === "2"} $age={id === "3"} $book={id === "4"}>
+          <AnswersList
+            $emoji={id === "2"}
+            $age={id === "3"}
+            $book={id === "4"}
+            $topics={id === "5"}
+          >
             {answers &&
               answers?.map((answer) => (
                 <Answer

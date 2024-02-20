@@ -20,6 +20,7 @@ export const QuestionSupportHeader = styled.h4`
 `;
 
 export const AnswersList = styled.ul`
+
   ${({ $emoji }) =>
     $emoji &&
     `
@@ -37,6 +38,17 @@ export const AnswersList = styled.ul`
     flex-direction: column;
     justify-content: center;
     gap: 12px;
+    margin-bottom: 24px;
+  `}
+
+   ${({ $topics }) =>
+    $topics &&
+    `
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, auto);
+    place-items: center;
     margin-bottom: 24px;
   `}
 `;
@@ -66,4 +78,8 @@ export const QuestionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+`;
+
+export const HateSpan = styled.span`
+  color: #e4229b;
 `;

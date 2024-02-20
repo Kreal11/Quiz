@@ -13,10 +13,10 @@
   --checked-answer-color: #e4229b33;
   --support-color: #c4c8cc;
   --checkbox-bg-color: #6d4376;
+  --loader-outline-color: #e8eaf2;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
