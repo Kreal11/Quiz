@@ -17,7 +17,6 @@ import sprite from "../../assets/sprite/sprite.svg";
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
   const [quizResults, setQuizResults] = useState([]);
-  console.log(quizResults);
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
 

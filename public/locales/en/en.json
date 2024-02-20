@@ -3,6 +3,8 @@
   "type": "type",
   "email": "email",
   "Email": "Email",
+  "order": "order",
+  "title": "title",
 
   "What is your preferred language?": "What is your preferred language?",
   "What gender do you identify with?": "What gender do you identify with?",
