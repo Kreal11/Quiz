@@ -48,12 +48,20 @@
   "Enter your email to get full access": "Ingrese su correo electrónico para obtener acceso completo",
   "By continuing I agree with Privacy policy and Terms of use": "Al continuar, acepto la política de privacidad y los términos de uso",
   "Your email": "Tu correo electrónico",
+  "Field is required": "Campo requerido",
+  "No longer than 32 characters": "No más de 32 caracteres",
+  "Invalid email format": "Formato de correo electrónico no válido",
 
-  "Preparing results for you": "Preparando resultados para usted",
+  "Finding collections for you...": "Encontrando colecciones para ti...",
 
-  "Thanks": "Gracias",
+  "Thank you": "Gracias",
+  "for supporting us and passing quiz": "por tu apoyo y por pasar el cuestionario",
   "Download my answers": "Descargar mis respuestas",
   "Retake my quiz": "Volver a realizar mi cuestionario",
+
+  "Choose language": "Elegir idioma",
+  "Please share how do you identify yourself": "Por favor, comparte cómo te identificas",
+  "Choose up to 3 topics you like": "Elige hasta 3 temas que te gusten",
 
   "Next": "Siguiente"
 }
