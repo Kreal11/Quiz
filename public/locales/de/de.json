@@ -48,22 +48,20 @@
   "Enter your email to get full access": "Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugriff zu erhalten",
   "By continuing I agree with Privacy policy and Terms of use": "Durch die Fortsetzung stimme ich der Datenschutzrichtlinie und den Nutzungsbedingungen zu",
   "Your email": "Deine E-Mail",
+  "Field is required": "Feld ist erforderlich",
+  "No longer than 32 characters": "Nicht länger als 32 Zeichen",
+  "Invalid email format": "Ungültiges E-Mail-Format",
 
-  "Preparing results for you": "Vorbereitung der Ergebnisse für Sie",
+  "Finding collections for you...": "Sammlungen für Sie finden...",
 
-  "Thanks": "Danke",
+  "Thank you": "Danke schön",
+  "for supporting us and passing quiz": "für Ihre Unterstützung und das Bestehen des Quiz",
   "Download my answers": "Meine Antworten herunterladen",
   "Retake my quiz": "Mein Quiz erneut machen",
 
   "Choose language": "Sprache wählen",
   "Please share how do you identify yourself": "Bitte teilen Sie mit, wie Sie sich identifizieren",
   "Choose up to 3 topics you like": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
-  "Finding collections for you...": "Sammlungen für Sie finden...",
-  "Thank you": "Danke schön",
-  "for supporting us and passing quiz": "für Ihre Unterstützung und das Bestehen des Quiz",
-  "Field is required": "Feld ist erforderlich",
-  "Email cannot be longer than 32 characters": "E-Mail darf nicht länger als 32 Zeichen sein",
-  "Invalid email format": "Ungültiges E-Mail-Format",
 
   "Next": "Weiter"
 }

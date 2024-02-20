@@ -20,7 +20,6 @@ export const QuestionSupportHeader = styled.h4`
 `;
 
 export const AnswersList = styled.ul`
-
   ${({ $emoji }) =>
     $emoji &&
     `

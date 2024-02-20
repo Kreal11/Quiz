@@ -3,7 +3,6 @@ import Answer from "../answer/Answer";
 import { Trans, useTranslation } from "react-i18next";
 import {
   AnswersList,
-  HateSpan,
   QuestionSupportHeader,
   QuestionsButton,
   QuestionsHeader,
@@ -32,11 +31,6 @@ const Question = ({
 
   const isBubbleMaxSelected = type === "bubble" && selectedAnswers.length > 3;
 
-  // const handleChangeLanguage = (lang) => {
-  //   i18n.changeLanguage(lang);
-  // };
-  console.log(id);
-
   return (
     <li>
       {id > 1 && (
@@ -51,7 +45,7 @@ const Question = ({
           )}
           {id !== 4 && <QuestionsHeader>{t(title)}</QuestionsHeader>}
           {support_text && (
-            <QuestionSupportHeader>{support_text}</QuestionSupportHeader>
+            <QuestionSupportHeader>{t(support_text)}</QuestionSupportHeader>
           )}
           <AnswersList
             $emoji={id === "2"}

@@ -60,7 +60,7 @@ export const Label = styled.label`
     justify-content: center;
     text-align: center;
     border-radius: 50%;
-    padding: 18px 8px 23px 8px;
+    padding: 23px 14px 23px 14px;
     background-color: var(--answer-bg-color);
     font-family: Nunito Sans;
     font-size: 13px;

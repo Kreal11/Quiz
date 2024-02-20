@@ -42,11 +42,11 @@ const Email = () => {
     setEmail(e.target.value);
 
     if (inputValue.length === 0) {
-      setError("Field is required");
+      setError(t("Field is required"));
     } else if (inputValue.length > 32) {
-      setError("Email cannot be longer than 32 characters");
+      setError(t("No longer than 32 characters"));
     } else if (!/^[\p{L}0-9-.]+$/u.test(inputValue)) {
-      setError("Invalid email format");
+      setError(t("Invalid email format"));
     } else {
       setError("");
     }
