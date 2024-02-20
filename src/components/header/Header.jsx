@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { HeaderWrapper, ProgressBarDiv } from "./Header.styled";
-import sprite from "../../assets/sprite.svg";
 
 const Header = () => {
   const { id } = useParams();
