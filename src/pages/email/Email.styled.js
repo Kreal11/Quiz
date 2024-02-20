@@ -18,6 +18,7 @@ export const EmailFormWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 `;
 
@@ -50,6 +51,11 @@ export const EmailInput = styled.input`
   letter-spacing: -0.01em;
   border-radius: 16px;
   border: 2px solid transparent;
+  transition: border 0.3s ease-in;
+
+  &:focus {
+    ${({ $error }) => $error && `border: 2px solid var(--invalid-color);`}
+  }
 
   &:focus {
     outline: none;
@@ -75,4 +81,12 @@ export const SubmitButton = styled.button`
   &:disabled {
     opacity: 0.5;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  font-size: 14px;
+  color: var(--invalid-color);
+  position: absolute;
+  top: 85px;
+  left: 24px;
 `;

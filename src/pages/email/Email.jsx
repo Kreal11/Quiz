@@ -7,18 +7,18 @@ import {
   EmailHeaderSupportText,
   EmailInput,
   EmailWrapper,
+  ErrorMessage,
   SubmitButton,
 } from "./Email.styled";
 
 const Email = () => {
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [focused, setFocused] = useState(false);
+
   const [redirecting, setRedirecting] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +35,30 @@ const Email = () => {
 
     setEmail("");
   };
+
+  const handleEmailChange = (e) => {
+    const inputValue = e.target.value.trim();
+    setEmail(e.target.value);
+
+    if (inputValue.length === 0) {
+      setError("Field is required");
+    } else if (inputValue.length > 32) {
+      setError("Email cannot be longer than 32 characters");
+    } else if (!/^[\p{L}0-9-.]+$/u.test(inputValue)) {
+      setError("Invalid email format");
+    } else {
+      setError("");
+    }
+  };
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+  };
+
   return (
     <EmailWrapper>
       <EmailFormWrapper>
@@ -51,11 +75,19 @@ const Email = () => {
             value={email}
             onChange={handleEmailChange}
             disabled={redirecting}
+            $error={error}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
+          {error && <ErrorMessage>{error}</ErrorMessage>}
         </form>
         <p>{t("By continuing I agree with Privacy policy and Terms of use")}</p>
       </EmailFormWrapper>
-      <SubmitButton type="submit" disabled={redirecting} onClick={handleSubmit}>
+      <SubmitButton
+        type="submit"
+        disabled={redirecting || error || !email}
+        onClick={handleSubmit}
+      >
         {t("Next")}
       </SubmitButton>
     </EmailWrapper>
