@@ -10,7 +10,7 @@
   "What is your preferred language?": "Quelle est votre langue préférée?",
   "What gender do you identify with?": "Avec quel genre vous identifiez-vous?",
   "What is your age?": "Quel âge avez-vous?",
-  "What do you hate the most in a book?": "Qu'est-ce que vous détestez le plus dans un livre?",
+  "What do you hate the most in a book?": "Qu'est-ce que vous <lilacSpan>détestez</lilacSpan> le plus dans un livre?",
   "What are your favorite topics?": "Quels sont vos sujets préférés?",
 
   "single-select": "Sélection unique",
@@ -46,7 +46,7 @@
   "Romance": "Romance",
 
   "Enter your email to get full access": "Entrez votre email pour obtenir un accès complet",
-  "By continuing I agree with Privacy policy and Terms of use": "En continuant, j'accepte la politique de confidentialité et les conditions d'utilisation",
+  "By continuing I agree with Privacy policy and Terms of use": "En continuant, j'accepte <lilacSpan>la politique de confidentialité</lilacSpan> et <lilacSpan>les conditions d'utilisation</lilacSpan>",
   "Your email": "Votre e-mail",
   "Field is required": "Champ obligatoire",
   "No longer than 32 characters": "Pas plus de 32 caractères",

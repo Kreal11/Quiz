@@ -98,4 +98,6 @@ export const AgreeMessage = styled.p`
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0em;
+  max-width: 280px;
+  margin: 0 auto;
 `;

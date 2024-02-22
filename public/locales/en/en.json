@@ -9,7 +9,7 @@
   "What is your preferred language?": "What is your preferred language?",
   "What gender do you identify with?": "What gender do you identify with?",
   "What is your age?": "What is your age?",
-  "What do you hate the most in a book?": "What do you hate the most in a book?",
+  "What do you hate the most in a book?": "What do you <lilacSpan>hate</lilacSpan> the most in a book?",
   "What are your favorite topics?": "What are your favorite topics?",
 
   "single-select": "single-select",
@@ -45,7 +45,7 @@
   "Romance": "Romance",
 
   "Enter your email to get full access": "Enter your email to get full access",
-  "By continuing I agree with Privacy policy and Terms of use": "By continuing I agree with Privacy policy and Terms of use",
+  "By continuing I agree with Privacy policy and Terms of use": "By continuing I agree with <lilacSpan>Privacy policy</lilacSpan> and <lilacSpan>Terms of use</lilacSpan>",
   "Your email": "Your email",
   "Field is required": "Field is required",
   "No longer than 32 characters": "No longer than 32 characters",

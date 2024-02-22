@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import {
   AgreeMessage,
@@ -11,6 +11,7 @@ import {
   ErrorMessage,
   SubmitButton,
 } from "./Email.styled";
+import { LilacSpan } from "../../components/question/Question.styled";
 
 const Email = () => {
   const [email, setEmail] = useState("");
@@ -83,7 +84,14 @@ const Email = () => {
           {error && focused && <ErrorMessage>{error}</ErrorMessage>}
         </form>
         <AgreeMessage>
-          {t("By continuing I agree with Privacy policy and Terms of use")}
+          <Trans
+            t={t}
+            i18nKey={
+              "By continuing I agree with Privacy policy and Terms of use"
+            }
+            components={{ lilacSpan: <LilacSpan /> }}
+          />
+          {/* {t("By continuing I agree with Privacy policy and Terms of use")} */}
         </AgreeMessage>
       </EmailFormWrapper>
       <SubmitButton

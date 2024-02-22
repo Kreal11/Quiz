@@ -79,6 +79,6 @@ export const QuestionsWrapper = styled.div`
   align-items: stretch;
 `;
 
-export const HateSpan = styled.span`
+export const LilacSpan = styled.span`
   color: #e4229b;
 `;
