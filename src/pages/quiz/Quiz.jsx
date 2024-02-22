@@ -5,7 +5,7 @@ import Question from "../../components/question/Question";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
-  LanguageLiNavLinkWrapper,
+  LangNavLinkWrapper,
   LanguageNavLink,
   LanguageQuestionHeader,
   LanguageQuestionWrapper,
@@ -13,6 +13,13 @@ import {
   SvgBackArrow,
 } from "./Quiz.styled";
 import sprite from "../../assets/sprite/sprite.svg";
+
+const languages = [
+  { code: "en", name: "English" },
+  { code: "de", name: "German" },
+  { code: "fr", name: "French" },
+  { code: "es", name: "Spanish" },
+];
 
 const Quiz = () => {
   const [question, setQuestion] = useState(null);
@@ -89,20 +96,16 @@ const Quiz = () => {
             {t("What is your preferred language?")}
           </LanguageQuestionHeader>
           <h4>{t("Choose language")}</h4>
-          <LanguageLiNavLinkWrapper>
-            <LanguageNavLink onClick={() => changeLanguage("en", "English")}>
-              {t("English")}
-            </LanguageNavLink>
-            <LanguageNavLink onClick={() => changeLanguage("de", "German")}>
-              {t("German")}
-            </LanguageNavLink>
-            <LanguageNavLink onClick={() => changeLanguage("fr", "French")}>
-              {t("French")}
-            </LanguageNavLink>
-            <LanguageNavLink onClick={() => changeLanguage("es", "Spanish")}>
-              {t("Spanish")}
-            </LanguageNavLink>
-          </LanguageLiNavLinkWrapper>
+          <LangNavLinkWrapper>
+            {languages.map((lang) => (
+              <LanguageNavLink
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code, lang.name)}
+              >
+                {t(lang.name)}
+              </LanguageNavLink>
+            ))}
+          </LangNavLinkWrapper>
         </LanguageQuestionWrapper>
       )}
 
