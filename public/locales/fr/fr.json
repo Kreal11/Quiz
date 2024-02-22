@@ -54,8 +54,7 @@
 
   "Finding collections for you...": "Recherche de collections pour vous...",
 
-  "Thank you": "Merci",
-  "for supporting us and passing quiz": "de nous soutenir et de réussir le quiz",
+  "Thank you for supporting us and passing quiz": "<thankYouHeader>Merci</thankYouHeader> <supportHeader>de nous soutenir et de réussir le quiz</supportHeader>",
   "Download my answers": "Télécharger mes réponses",
   "Retake my quiz": "Refaire mon quiz",
 

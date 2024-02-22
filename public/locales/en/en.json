@@ -53,8 +53,7 @@
 
   "Finding collections for you...": "Finding collections for you...",
 
-  "Thank you": "Thank you",
-  "for supporting us and passing quiz": "for supporting us and passing quiz",
+  "Thank you for supporting us and passing quiz": "<thankYouHeader>Thank you</thankYouHeader> <supportHeader>for supporting us and passing quiz</supportHeader>",
   "Download my answers": "Download my answers",
   "Retake my quiz": "Retake my quiz",
 
