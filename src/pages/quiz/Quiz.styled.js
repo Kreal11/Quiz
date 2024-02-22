@@ -26,7 +26,7 @@ export const LanguageQuestionHeader = styled.h3`
   margin-bottom: 16px;
 `;
 
-export const LanguageLiNavLinkWrapper = styled.div`
+export const LangNavLinkWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

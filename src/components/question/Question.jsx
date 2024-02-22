@@ -13,6 +13,7 @@ import PropTypes from "prop-types";
 
 const Question = ({
   id,
+  title,
   support_text,
   answers,
   setNextQuestionId,
@@ -44,6 +45,7 @@ const Question = ({
             />
           </QuestionsHeader>
         )}
+        {id !== "4" && <QuestionsHeader>{t(title)}</QuestionsHeader>}
         {support_text && (
           <QuestionSupportHeader>{t(support_text)}</QuestionSupportHeader>
         )}
@@ -84,6 +86,7 @@ export default Question;
 
 Question.propTypes = {
   id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   support_text: PropTypes.string,
   answers: PropTypes.arrayOf(
     PropTypes.shape({
