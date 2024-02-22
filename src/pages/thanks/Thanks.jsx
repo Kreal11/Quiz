@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import {
   GetResultsButton,
   RetakeQuizNavLink,
@@ -59,8 +59,7 @@ const Thanks = () => {
   return (
     <ThanksWrapper>
       <div>
-        <ThankYouHeader>{t("Thank you")}</ThankYouHeader>
-        <SupportHeader>{t("for supporting us and passing quiz")}</SupportHeader>
+        <Trans i18nKey="Thank you for supporting us and passing quiz" components={{thankYouHeader: <ThankYouHeader/>, supportHeader: <SupportHeader/>}} />
         <img src={checkmark} alt="checkmark" />
       </div>
       <div>
