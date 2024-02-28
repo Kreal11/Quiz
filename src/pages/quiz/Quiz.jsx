@@ -12,8 +12,7 @@ import {
   QuizWrapper,
   SvgBackArrow,
 } from "./Quiz.styled";
-// import Icon from "../../components/icon/Icon";
-import iconBack from "../../assets/svg/icon-back.svg";
+import sprite from "../../assets/sprite/sprite.svg";
 
 const languages = [
   { code: "en", name: "English" },
@@ -115,7 +114,7 @@ const Quiz = () => {
           <NavLink onClick={handleGoBack}>
             <SvgBackArrow>
               <svg>
-                <use xlinkHref={`${iconBack}#icon-back`} />
+                <use xlinkHref={`${sprite}#icon-back`} />
               </svg>
             </SvgBackArrow>
           </NavLink>
