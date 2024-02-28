@@ -15,6 +15,7 @@ import billionaire from "../../assets/images/emoji/billionaire.png";
 import royal_obsession from "../../assets/images/emoji/royal_obsession.png";
 import young_adult from "../../assets/images/emoji/young_adult.png";
 import romance from "../../assets/images/emoji/romance.png";
+import Icon from "../icon/Icon";
 
 const imagePaths = {
   action: action,
@@ -89,7 +90,7 @@ const Answer = ({
           />
           {type === "multiple-select" && (
             <SvgChecked>
-              <use xlinkHref={`${sprite}#icon-checked`}></use>
+              <Icon id="icon-checked" />
             </SvgChecked>
           )}
         </Label>
