@@ -6,7 +6,6 @@ import {
   Label,
   SvgChecked,
 } from "./Answer.styled";
-import sprite from "../../assets/sprite/sprite.svg";
 import { useState } from "react";
 import action from "../../assets/images/emoji/action.png";
 import werewolf from "../../assets/images/emoji/werewolf.png";
@@ -15,7 +14,8 @@ import billionaire from "../../assets/images/emoji/billionaire.png";
 import royal_obsession from "../../assets/images/emoji/royal_obsession.png";
 import young_adult from "../../assets/images/emoji/young_adult.png";
 import romance from "../../assets/images/emoji/romance.png";
-import Icon from "../icon/Icon";
+// import Icon from "../icon/Icon";
+import iconChecked from "../../assets/svg/icon-checked.svg";
 
 const imagePaths = {
   action: action,
@@ -90,7 +90,9 @@ const Answer = ({
           />
           {type === "multiple-select" && (
             <SvgChecked>
-              <Icon id="icon-checked" />
+              <svg>
+                <use xlinkHref={`${iconChecked}#icon-checked`} />
+              </svg>
             </SvgChecked>
           )}
         </Label>
